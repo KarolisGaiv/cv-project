@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PersonalDetailsForm from './components/CVForm/PersonalDetailsForm/PersonalDetails';
 import EducationForm from './components/CVForm/EducationForm/EducationForm';
+import WorkForm from './components/CVForm/WorkForm/WorkForm';
 // import PersonDetails from "./components/CVPreview/PersonDetails/PersonDetails";
 import './styles/styles.scss';
 
@@ -10,6 +11,7 @@ function App() {
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [education, setEducation] = useState([]);
+  const [workExperience, setWorkExperience] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,6 +26,7 @@ function App() {
 
   function test() {
     console.log(education);
+    console.log(workExperience);
   }
 
   return (
@@ -39,6 +42,7 @@ function App() {
         handleSubmit={handleSubmit}
       />
       <EducationForm setEducation={setEducation} />
+      <WorkForm setWorkExperience={setWorkExperience} />
       <button onClick={test}>Test</button>
     </div>
   );

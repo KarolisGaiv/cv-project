@@ -16,7 +16,6 @@ function EducationForm({ setEducation }) {
     } else {
       openBtn.innerHTML = 'Add';
     }
-    console.log(newRecord);
   }
 
   const newRecord = {
