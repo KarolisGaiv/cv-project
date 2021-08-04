@@ -1,62 +1,61 @@
-import React from "react";
-import "./personalDetails.scss";
+import React from 'react';
+import './personalDetails.scss';
 
 function PersonalDetailsForm({
-  name,
-  surname,
-  email,
-  number,
-  handleName,
-  handleSurname,
-  handleEmail,
-  handleNumber,
+  setName,
+  setSurname,
+  setEmail,
+  setNumber,
   handleSubmit,
 }) {
-  // const [name, setName] = useState("");
-  // const [surname, setSurname] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [number, setNumber] = useState("");
+  function handleName(e) {
+    const name = e.target.value;
+    setName(name);
+  }
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  // }
+  function handleSurname(e) {
+    const surname = e.target.value;
+    setSurname(surname);
+  }
+
+  function handleEmail(e) {
+    const email = e.target.value;
+    setEmail(email);
+  }
+
+  function handleNumber(e) {
+    const number = e.target.value;
+    setNumber(number);
+  }
 
   return (
-    <div className="details-form-wrapper">
+    <div className='details-form-wrapper'>
       <h1>Personal Details</h1>
-      <form className="details-form" onSubmit={handleSubmit}>
-        <label htmlFor="name-field">Name</label>
+      <form className='details-form' onSubmit={handleSubmit}>
+        <label htmlFor='name-field'>Name</label>
         <input
-          type="text"
-          id="name-field"
-          placeholder="John"
-          value={name}
+          type='text'
+          id='name-field'
+          placeholder='John'
           onChange={handleName}
         />
-        <label htmlFor="surname-field">Last Name</label>
+        <label htmlFor='surname-field'>Last Name</label>
         <input
-          type="text"
-          id="surname-field"
-          placeholder="Doe"
-          value={surname}
+          type='text'
+          id='surname-field'
+          placeholder='Doe'
           onChange={handleSurname}
         />
-        <label htmlFor="email-field">Email</label>
+        <label htmlFor='email-field'>Email</label>
         <input
-          type="email-field"
-          id="email-field"
-          placeholder="example@gmail.com"
-          value={email}
+          type='email-field'
+          id='email-field'
+          placeholder='example@gmail.com'
           onChange={handleEmail}
         />
-        <label htmlFor="phone-field">Phone Number</label>
-        <input
-          type="number"
-          id="phone-field"
-          value={number}
-          onChange={handleNumber}
-        />
-        <input type="submit" value="Submit"></input>
+        <label htmlFor='phone-field'>Phone Number</label>
+        <input type='number' id='phone-field' onChange={handleNumber} />
+        <input type='submit' value='Submit'></input>
       </form>
     </div>
   );
