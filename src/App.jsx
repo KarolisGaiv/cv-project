@@ -22,6 +22,10 @@ function App() {
     console.log(person);
   }
 
+  function test() {
+    console.log(education);
+  }
+
   return (
     <div>
       <h1>
@@ -35,6 +39,7 @@ function App() {
         handleSubmit={handleSubmit}
       />
       <EducationForm setEducation={setEducation} />
+      <button onClick={test}>Test</button>
     </div>
   );
 }
