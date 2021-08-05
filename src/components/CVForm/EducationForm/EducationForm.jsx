@@ -28,6 +28,10 @@ function EducationForm({ setEducation }) {
   function handleSubmit(e) {
     e.preventDefault();
     setEducation((prevExp) => [...prevExp, newRecord]);
+    setSchool('');
+    setStudy('');
+    setFromDate('');
+    setToDate('');
   }
 
   return (
@@ -43,6 +47,8 @@ function EducationForm({ setEducation }) {
           id='school-field'
           placeholder='MIT'
           onChange={(e) => setSchool(e.target.value)}
+          value={school}
+          required
         />
         <label htmlFor='study-field'>Study Subject</label>
         <input
@@ -50,6 +56,8 @@ function EducationForm({ setEducation }) {
           id='study-field'
           placeholder='Physics'
           onChange={(e) => setStudy(e.target.value)}
+          value={study}
+          required
         />
         <h3>Date of Study</h3>
         <label htmlFor='study-start'>From</label>
@@ -57,12 +65,16 @@ function EducationForm({ setEducation }) {
           type='text'
           placeholder='YYYY'
           onChange={(e) => setFromDate(e.target.value)}
+          value={fromDate}
+          required
         />
         <label htmlFor='study-end'>To</label>
         <input
           type='text'
           placeholder='YYYY or Present'
           onChange={(e) => setToDate(e.target.value)}
+          value={toDate}
+          required
         />
         <input type='submit' value='Add Record' />
       </form>

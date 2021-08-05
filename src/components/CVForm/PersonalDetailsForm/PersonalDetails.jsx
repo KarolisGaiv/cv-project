@@ -55,7 +55,6 @@ function PersonalDetailsForm({
         />
         <label htmlFor='phone-field'>Phone Number</label>
         <input type='number' id='phone-field' onChange={handleNumber} />
-        <input type='submit' value='Submit'></input>
       </form>
     </div>
   );
