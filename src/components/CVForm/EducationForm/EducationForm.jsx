@@ -28,14 +28,42 @@ function EducationForm({ setEducation }) {
   function handleSubmit(e) {
     e.preventDefault();
     setEducation((prevExp) => [...prevExp, newRecord]);
+    displayUserRecord(newRecord);
+    clearFields();
+  }
+
+  function clearFields() {
     setSchool('');
     setStudy('');
     setFromDate('');
     setToDate('');
   }
 
+  function displayUserRecord(record) {
+    const card = document.createElement('div');
+    card.className = 'card-block';
+    const periodInfo = document.createElement('p');
+    periodInfo.className = 'education-date';
+    periodInfo.innerHTML = record.fromDate + '- ' + record.toDate;
+    card.appendChild(periodInfo);
+    const studyDetails = document.createElement('div');
+    studyDetails.className = 'study-details';
+    card.appendChild(studyDetails);
+    const studySubject = document.createElement('p');
+    studySubject.className = 'education-subject';
+    studySubject.innerHTML = record.study;
+    studyDetails.appendChild(studySubject);
+    const school = document.createElement('p');
+    school.className = 'education-school';
+    school.innerHTML = record.school;
+    studyDetails.appendChild(school);
+
+    const educationBlock = document.querySelector('.education-block');
+    educationBlock.appendChild(card);
+  }
+
   return (
-    <div>
+    <div className='education-block'>
       <h2>Education Details</h2>
       <button className='open-form-btn' onClick={displayForm}>
         Add
