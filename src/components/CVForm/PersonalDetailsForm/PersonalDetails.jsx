@@ -38,6 +38,7 @@ function PersonalDetailsForm({
           id='name-field'
           placeholder='John'
           onChange={handleName}
+          required
         />
         <label htmlFor='surname-field'>Last Name</label>
         <input
@@ -45,6 +46,7 @@ function PersonalDetailsForm({
           id='surname-field'
           placeholder='Doe'
           onChange={handleSurname}
+          required
         />
         <label htmlFor='email-field'>Email</label>
         <input
@@ -52,6 +54,7 @@ function PersonalDetailsForm({
           id='email-field'
           placeholder='example@gmail.com'
           onChange={handleEmail}
+          required
         />
         <label htmlFor='phone-field'>Phone Number</label>
         <input type='number' id='phone-field' onChange={handleNumber} />

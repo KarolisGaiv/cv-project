@@ -30,6 +30,11 @@ function WorkForm({ setWorkExperience }) {
   function addRecord(e) {
     e.preventDefault();
     setWorkExperience((prevRecords) => [...prevRecords, newJobRecord]);
+    setCompanyName('');
+    setPosition('');
+    setJobDescription('');
+    setFromDate('');
+    setToDate('');
   }
 
   return (
@@ -45,6 +50,8 @@ function WorkForm({ setWorkExperience }) {
           id='company-field'
           placeholder='Google'
           onChange={(e) => setCompanyName(e.target.value)}
+          required
+          value={companyName}
         />
         <label htmlFor='position-field'>Position Title</label>
         <input
@@ -52,6 +59,8 @@ function WorkForm({ setWorkExperience }) {
           id='position-field'
           placeholder='CEO'
           onChange={(e) => setPosition(e.target.value)}
+          required
+          value={position}
         />
         <label htmlFor='job-description'>Job Description</label>
         <textarea
@@ -60,18 +69,24 @@ function WorkForm({ setWorkExperience }) {
           rows='5'
           placeholder='Main tasks of your jobs'
           onChange={(e) => setJobDescription(e.target.value)}
+          required
+          value={jobDescription}
         ></textarea>
         <label htmlFor='work-from'>From:</label>
         <input
           type='text'
           placeholder='YYYY'
           onChange={(e) => setFromDate(e.target.value)}
+          required
+          value={fromDate}
         />
         <label htmlFor='work-to'>To:</label>
         <input
           type='text'
           placeholder='YYYY or Present'
           onChange={(e) => setToDate(e.target.value)}
+          required
+          value={toDate}
         />
         <input type='submit' value='Add Record' />
       </form>
