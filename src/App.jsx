@@ -1,49 +1,57 @@
 import React, { useState } from 'react';
-import PersonalDetailsForm from './components/CVForm/PersonalDetailsForm/PersonalDetails';
-import EducationForm from './components/CVForm/EducationForm/EducationForm';
-import WorkForm from './components/CVForm/WorkForm/WorkForm';
-// import PersonDetails from "./components/CVPreview/PersonDetails/PersonDetails";
+import ResumeView from './components/CVForm/ResumeView';
+import UserCV from './components/CVPreview/UserCV/UserCV';
 import './styles/styles.scss';
 
 function App() {
+  const [previewStatus, setPreviewStatus] = useState(false);
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [education, setEducation] = useState([]);
   const [workExperience, setWorkExperience] = useState([]);
+  const [person, setPerson] = useState({});
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const person = {
+  function handleSubmit() {
+    // e.preventDefault();
+    const currentUser = {
       name,
       surname,
       email,
       number,
     };
-    console.log(person);
+    setPerson(currentUser);
   }
 
-  function test() {
-    console.log(education);
-    console.log(workExperience);
+  // function test() {
+  //   console.log(name);
+  //   console.log(surname);
+  //   console.log(education);
+  //   console.log(workExperience);
+  // }
+
+  function showPreviewForm() {
+    handleSubmit();
+    setPreviewStatus(true);
   }
 
   return (
     <div>
-      <h1>
-        {name} and {surname}
-      </h1>
-      <PersonalDetailsForm
-        setName={setName}
-        setSurname={setSurname}
-        setEmail={setEmail}
-        setNumber={setNumber}
-        handleSubmit={handleSubmit}
-      />
-      <EducationForm setEducation={setEducation} />
-      <WorkForm setWorkExperience={setWorkExperience} />
-      <button onClick={test}>Test</button>
+      {!previewStatus ? (
+        <ResumeView
+          setName={setName}
+          setSurname={setSurname}
+          setEmail={setEmail}
+          setNumber={setNumber}
+          setEducation={setEducation}
+          setWorkExperience={setWorkExperience}
+        />
+      ) : (
+        <UserCV person={person} />
+      )}
+
+      <button onClick={showPreviewForm}>Test</button>
     </div>
   );
 }

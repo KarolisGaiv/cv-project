@@ -6,7 +6,7 @@ function PersonalDetailsForm({
   setSurname,
   setEmail,
   setNumber,
-  handleSubmit,
+  // handleSubmit,
 }) {
   function handleName(e) {
     const name = e.target.value;
@@ -31,7 +31,7 @@ function PersonalDetailsForm({
   return (
     <div className='details-form-wrapper'>
       <h1>Personal Details</h1>
-      <form className='details-form' onSubmit={handleSubmit}>
+      <form className='details-form'>
         <label htmlFor='name-field'>Name</label>
         <input
           type='text'

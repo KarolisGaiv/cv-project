@@ -105,6 +105,7 @@ function EducationForm({ setEducation }) {
           required
         />
         <input type='submit' value='Add Record' />
+        <button onClick={clearFields}>Cancel</button>
       </form>
     </div>
   );

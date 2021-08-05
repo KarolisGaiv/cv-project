@@ -121,6 +121,7 @@ function WorkForm({ setWorkExperience }) {
           value={toDate}
         />
         <input type='submit' value='Add Record' />
+        <button onClick={clearFields}>Cancel</button>
       </form>
     </div>
   );
