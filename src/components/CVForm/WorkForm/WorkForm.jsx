@@ -30,6 +30,11 @@ function WorkForm({ setWorkExperience }) {
   function addRecord(e) {
     e.preventDefault();
     setWorkExperience((prevRecords) => [...prevRecords, newJobRecord]);
+    displayWorkRecord(newJobRecord);
+    clearFields();
+  }
+
+  function clearFields() {
     setCompanyName('');
     setPosition('');
     setJobDescription('');
@@ -37,8 +42,35 @@ function WorkForm({ setWorkExperience }) {
     setToDate('');
   }
 
+  function displayWorkRecord(record) {
+    const card = document.createElement('div');
+    card.className = 'card-block';
+    const periodInfo = document.createElement('p');
+    periodInfo.className = 'period';
+    periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
+    card.appendChild(periodInfo);
+    const detailsWrapper = document.createElement('div');
+    detailsWrapper.className = 'card-details';
+    card.appendChild(detailsWrapper);
+    const position = document.createElement('p');
+    position.className = 'work-position';
+    position.innerHTML = record.position;
+    detailsWrapper.appendChild(position);
+    const company = document.createElement('p');
+    company.className = 'work-comapny';
+    company.innerHTML = record.companyName;
+    detailsWrapper.appendChild(company);
+    const jobDescription = document.createElement('p');
+    jobDescription.className = 'work-description';
+    jobDescription.innerHTML = record.jobDescription;
+    detailsWrapper.appendChild(jobDescription);
+
+    const workBlock = document.querySelector('.work-experience-block');
+    workBlock.appendChild(card);
+  }
+
   return (
-    <div>
+    <div className='work-experience-block'>
       <h2>Work Experience</h2>
       <button className='open-workForm-btn' onClick={displayForm}>
         Add

@@ -28,7 +28,7 @@ function EducationForm({ setEducation }) {
   function handleSubmit(e) {
     e.preventDefault();
     setEducation((prevExp) => [...prevExp, newRecord]);
-    displayUserRecord(newRecord);
+    displayEducationRecord(newRecord);
     clearFields();
   }
 
@@ -39,24 +39,24 @@ function EducationForm({ setEducation }) {
     setToDate('');
   }
 
-  function displayUserRecord(record) {
+  function displayEducationRecord(record) {
     const card = document.createElement('div');
     card.className = 'card-block';
     const periodInfo = document.createElement('p');
-    periodInfo.className = 'education-date';
+    periodInfo.className = 'period';
     periodInfo.innerHTML = record.fromDate + '- ' + record.toDate;
     card.appendChild(periodInfo);
-    const studyDetails = document.createElement('div');
-    studyDetails.className = 'study-details';
-    card.appendChild(studyDetails);
+    const detailsWrapper = document.createElement('div');
+    detailsWrapper.className = 'card-details';
+    card.appendChild(detailsWrapper);
     const studySubject = document.createElement('p');
     studySubject.className = 'education-subject';
     studySubject.innerHTML = record.study;
-    studyDetails.appendChild(studySubject);
+    detailsWrapper.appendChild(studySubject);
     const school = document.createElement('p');
     school.className = 'education-school';
     school.innerHTML = record.school;
-    studyDetails.appendChild(school);
+    detailsWrapper.appendChild(school);
 
     const educationBlock = document.querySelector('.education-block');
     educationBlock.appendChild(card);
