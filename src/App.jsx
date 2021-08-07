@@ -48,7 +48,11 @@ function App() {
           setWorkExperience={setWorkExperience}
         />
       ) : (
-        <UserCV person={person} />
+        <UserCV
+          person={person}
+          education={education}
+          workExperience={workExperience}
+        />
       )}
 
       <button onClick={showPreviewForm}>Test</button>

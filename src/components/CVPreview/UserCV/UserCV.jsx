@@ -1,9 +1,13 @@
 import React from 'react';
 
-function UserCV({ person }) {
+function UserCV({ person, education, workExperience }) {
   return (
-    <div>
-      <h1>{person.name}</h1>
+    <div className='cv-wrapper'>
+      <h1>{person.name + ' ' + person.surname}</h1>
+      {education.map((educationRecord) => (
+        <p>{educationRecord.school}</p>
+      ))}
+      {/* <p>{workExperience}</p> */}
     </div>
   );
 }
