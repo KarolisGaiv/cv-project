@@ -1,10 +1,12 @@
 $_primary: #ee6352;
 $_submit: #59a100;
+$_submit-hover: #82d41d;
 $_close: #ef974b;
+$_close-hover: #ea852d;
 
 body {
   background: #ddd;
-  font-family: basic-sans, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   height: 100vh;
   margin: auto;
   width: 90%;
@@ -40,15 +42,25 @@ input {
 }
 
 button {
+  cursor: pointer;
   border-color: transparent;
   border-radius: 5px;
+  font-weight: 700;
   padding: 5px 30px;
 
   &.--add {
     background: $_submit;
+
+    &:hover {
+      background: $_submit-hover;
+    }
   }
 
   &.--close {
     background: $_close;
+
+    &:hover {
+      background: $_close-hover;
+    }
   }
 }

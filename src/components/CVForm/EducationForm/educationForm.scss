@@ -1,5 +1,6 @@
 $_submit: #59a100;
 $_close: #ef974b;
+$_white: white;
 
 .education-block {
   margin-top: 2em;
@@ -15,24 +16,20 @@ $_close: #ef974b;
   }
 }
 
-.card-block {
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-around;
-}
-
 h3 {
   margin-top: 2em;
 }
 
 .form-button-block {
   display: flex;
-  justify-content: space-between;
-  margin: 2em;
+  justify-content: space-around;
+  margin: 1em;
 }
 
 .record-btn {
+  margin: 0 5px;
+  width: 135px;
+
   &.--add {
     background: $_submit;
   }
@@ -40,4 +37,34 @@ h3 {
   &.--cancel {
     background: $_close;
   }
+}
+
+.education-card {
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+}
+
+.education-period {
+  font-weight: bold;
+  margin: 1em;
+}
+
+.card-details {
+  flex: 2;
+  text-align: center;
+  margin: 1em;
+}
+
+.education-subject {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.education-school {
+  font-weight: 500;
+  margin-top: 10px;
 }

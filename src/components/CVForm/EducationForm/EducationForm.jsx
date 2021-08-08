@@ -43,19 +43,19 @@ function EducationForm({ setEducation }) {
 
   function displayEducationRecord(record) {
     const card = document.createElement('div');
-    card.className = 'card-block';
-    const periodInfo = document.createElement('p');
-    periodInfo.className = 'period';
-    periodInfo.innerHTML = record.fromDate + '- ' + record.toDate;
+    card.className = 'education-card';
+    const periodInfo = document.createElement('div');
+    periodInfo.className = 'education-period';
+    periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
     card.appendChild(periodInfo);
     const detailsWrapper = document.createElement('div');
     detailsWrapper.className = 'card-details';
     card.appendChild(detailsWrapper);
-    const studySubject = document.createElement('p');
+    const studySubject = document.createElement('div');
     studySubject.className = 'education-subject';
     studySubject.innerHTML = record.study;
     detailsWrapper.appendChild(studySubject);
-    const school = document.createElement('p');
+    const school = document.createElement('div');
     school.className = 'education-school';
     school.innerHTML = record.school;
     detailsWrapper.appendChild(school);
@@ -107,12 +107,8 @@ function EducationForm({ setEducation }) {
           required
         />
         <div className='form-button-block'>
-          <input
-            type='submit'
-            value='Add Record'
-            className='record-btn --add'
-          />
-          <button onClick={clearFields} className='record-btn --cancel'>
+          <button className='record-btn --add'>Add Record</button>
+          <button onClick={clearFields} className='record-btn --close'>
             Cancel
           </button>
         </div>
