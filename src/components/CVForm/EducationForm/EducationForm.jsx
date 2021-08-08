@@ -13,8 +13,10 @@ function EducationForm({ setEducation }) {
     const openBtn = document.querySelector('.open-form-btn');
     if (formWrapper.classList.value === 'education-form --visible') {
       openBtn.innerHTML = 'Close Form';
+      openBtn.className = 'open-form-btn --close';
     } else {
       openBtn.innerHTML = 'Add';
+      openBtn.className = 'open-form-btn --add';
     }
   }
 
@@ -64,8 +66,8 @@ function EducationForm({ setEducation }) {
 
   return (
     <div className='education-block'>
-      <h2>Education Details</h2>
-      <button className='open-form-btn' onClick={displayForm}>
+      <h1 className='section-header'>Education Details</h1>
+      <button className='open-form-btn --add' onClick={displayForm}>
         Add
       </button>
       <form className='education-form' onSubmit={handleSubmit}>
@@ -104,8 +106,16 @@ function EducationForm({ setEducation }) {
           value={toDate}
           required
         />
-        <input type='submit' value='Add Record' />
-        <button onClick={clearFields}>Cancel</button>
+        <div className='form-button-block'>
+          <input
+            type='submit'
+            value='Add Record'
+            className='record-btn --add'
+          />
+          <button onClick={clearFields} className='record-btn --cancel'>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

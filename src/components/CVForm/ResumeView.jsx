@@ -20,7 +20,7 @@ function ResumeView({
         setNumber={setNumber}
       />
       <EducationForm setEducation={setEducation} />
-      <WorkForm setWorkExperience={setWorkExperience} />
+      {/* <WorkForm setWorkExperience={setWorkExperience} /> */}
     </div>
   );
 }

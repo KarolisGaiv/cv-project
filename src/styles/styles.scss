@@ -1,4 +1,6 @@
 $_primary: #ee6352;
+$_submit: #59a100;
+$_close: #ef974b;
 
 body {
   background: #ddd;
@@ -29,5 +31,24 @@ input {
     outline: none !important;
     border-color: #719ece;
     box-shadow: 0 0 10px #719ece;
+  }
+}
+
+.section-header {
+  font-weight: 900;
+  color: $_primary;
+}
+
+button {
+  border-color: transparent;
+  border-radius: 5px;
+  padding: 5px 30px;
+
+  &.--add {
+    background: $_submit;
+  }
+
+  &.--close {
+    background: $_close;
   }
 }

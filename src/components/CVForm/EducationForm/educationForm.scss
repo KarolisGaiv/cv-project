@@ -1,8 +1,17 @@
+$_submit: #59a100;
+$_close: #ef974b;
+
+.education-block {
+  margin-top: 2em;
+}
+
 .education-form {
   display: none;
 
   &.--visible {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
   }
 }
 
@@ -11,4 +20,24 @@
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
+}
+
+h3 {
+  margin-top: 2em;
+}
+
+.form-button-block {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+}
+
+.record-btn {
+  &.--add {
+    background: $_submit;
+  }
+
+  &.--cancel {
+    background: $_close;
+  }
 }

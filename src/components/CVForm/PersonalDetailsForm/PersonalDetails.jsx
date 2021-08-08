@@ -24,7 +24,7 @@ function PersonalDetailsForm({ setName, setSurname, setEmail, setNumber }) {
 
   return (
     <div className='details-form-wrapper'>
-      <h1>Personal Details</h1>
+      <h1 className='section-header'>Personal Details</h1>
       <form className='details-form'>
         <label htmlFor='name-field'>Name</label>
         <input
