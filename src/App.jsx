@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='content'>
       {!previewStatus ? (
         <ResumeView
           setName={setName}

@@ -1,8 +1,11 @@
-.details-form-wrapper {
-  max-width: fit-content;
-}
+$_primary: #ee6352;
 
 .details-form {
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  font-weight: 900;
+  color: $_primary;
 }

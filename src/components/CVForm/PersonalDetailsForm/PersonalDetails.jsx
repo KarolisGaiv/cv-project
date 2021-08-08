@@ -1,13 +1,7 @@
 import React from 'react';
 import './personalDetails.scss';
 
-function PersonalDetailsForm({
-  setName,
-  setSurname,
-  setEmail,
-  setNumber,
-  // handleSubmit,
-}) {
+function PersonalDetailsForm({ setName, setSurname, setEmail, setNumber }) {
   function handleName(e) {
     const name = e.target.value;
     setName(name);
