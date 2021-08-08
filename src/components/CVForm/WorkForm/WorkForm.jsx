@@ -46,14 +46,17 @@ function WorkForm({ setWorkExperience }) {
 
   function displayWorkRecord(record) {
     const card = document.createElement('div');
-    card.className = 'record-card';
+    card.className = 'record-card --block';
+    const topBlock = document.createElement('div');
+    topBlock.className = 'top-block';
+    card.appendChild(topBlock);
     const periodInfo = document.createElement('div');
     periodInfo.className = 'period';
     periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
-    card.appendChild(periodInfo);
+    topBlock.appendChild(periodInfo);
     const detailsWrapper = document.createElement('div');
     detailsWrapper.className = 'card-details';
-    card.appendChild(detailsWrapper);
+    topBlock.appendChild(detailsWrapper);
     const position = document.createElement('div');
     position.className = 'work-position';
     position.innerHTML = record.position;
@@ -65,7 +68,7 @@ function WorkForm({ setWorkExperience }) {
     const jobDescription = document.createElement('div');
     jobDescription.className = 'work-description';
     jobDescription.innerHTML = record.jobDescription;
-    detailsWrapper.appendChild(jobDescription);
+    card.appendChild(jobDescription);
 
     const workBlock = document.querySelector('.work-experience-block');
     workBlock.appendChild(card);
