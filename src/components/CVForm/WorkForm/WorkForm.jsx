@@ -14,8 +14,10 @@ function WorkForm({ setWorkExperience }) {
     const openBtn = document.querySelector('.open-workForm-btn');
     if (formWrapper.classList.value === 'work-form --visible') {
       openBtn.innerHTML = 'Close Form';
+      openBtn.className = 'open-workForm-btn --close';
     } else {
-      openBtn.innerHTML = 'Add Record';
+      openBtn.innerHTML = 'Add';
+      openBtn.className = 'open-workForm-btn --add';
     }
   }
 
@@ -44,23 +46,23 @@ function WorkForm({ setWorkExperience }) {
 
   function displayWorkRecord(record) {
     const card = document.createElement('div');
-    card.className = 'card-block';
-    const periodInfo = document.createElement('p');
+    card.className = 'record-card';
+    const periodInfo = document.createElement('div');
     periodInfo.className = 'period';
     periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
     card.appendChild(periodInfo);
     const detailsWrapper = document.createElement('div');
     detailsWrapper.className = 'card-details';
     card.appendChild(detailsWrapper);
-    const position = document.createElement('p');
+    const position = document.createElement('div');
     position.className = 'work-position';
     position.innerHTML = record.position;
     detailsWrapper.appendChild(position);
-    const company = document.createElement('p');
+    const company = document.createElement('div');
     company.className = 'work-comapny';
     company.innerHTML = record.companyName;
     detailsWrapper.appendChild(company);
-    const jobDescription = document.createElement('p');
+    const jobDescription = document.createElement('div');
     jobDescription.className = 'work-description';
     jobDescription.innerHTML = record.jobDescription;
     detailsWrapper.appendChild(jobDescription);
@@ -72,7 +74,7 @@ function WorkForm({ setWorkExperience }) {
   return (
     <div className='work-experience-block'>
       <h2>Work Experience</h2>
-      <button className='open-workForm-btn' onClick={displayForm}>
+      <button className='open-workForm-btn --add' onClick={displayForm}>
         Add
       </button>
       <form className='work-form' onSubmit={addRecord}>
@@ -120,8 +122,12 @@ function WorkForm({ setWorkExperience }) {
           required
           value={toDate}
         />
-        <input type='submit' value='Add Record' />
-        <button onClick={clearFields}>Cancel</button>
+        <div className='form-buttons-block'>
+          <button className='record-btn --add'>Add Record</button>
+          <button onClick={clearFields} className='record-btn --close'>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

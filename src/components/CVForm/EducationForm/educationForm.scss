@@ -33,13 +33,9 @@ h3 {
   &.--add {
     background: $_submit;
   }
-
-  &.--cancel {
-    background: $_close;
-  }
 }
 
-.education-card {
+.record-card {
   align-items: center;
   background: white;
   border-radius: 5px;
@@ -48,7 +44,7 @@ h3 {
   margin: 2em 0;
 }
 
-.education-period {
+.period {
   font-weight: bold;
   margin: 1em;
 }

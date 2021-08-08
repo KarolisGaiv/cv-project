@@ -12,7 +12,7 @@ function ResumeView({
   setWorkExperience,
 }) {
   return (
-    <div>
+    <div className='resume-form-block'>
       <PersonalDetailsForm
         setName={setName}
         setSurname={setSurname}
@@ -20,7 +20,7 @@ function ResumeView({
         setNumber={setNumber}
       />
       <EducationForm setEducation={setEducation} />
-      {/* <WorkForm setWorkExperience={setWorkExperience} /> */}
+      <WorkForm setWorkExperience={setWorkExperience} />
     </div>
   );
 }

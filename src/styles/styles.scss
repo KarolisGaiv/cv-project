@@ -19,7 +19,12 @@ body {
   height: 100vh;
 }
 
-input {
+.resume-form-block {
+  width: fit-content;
+}
+
+input,
+textarea {
   border-color: transparent;
   border-radius: 5px;
   cursor: pointer;

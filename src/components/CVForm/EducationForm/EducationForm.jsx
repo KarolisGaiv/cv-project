@@ -43,9 +43,9 @@ function EducationForm({ setEducation }) {
 
   function displayEducationRecord(record) {
     const card = document.createElement('div');
-    card.className = 'education-card';
+    card.className = 'record-card';
     const periodInfo = document.createElement('div');
-    periodInfo.className = 'education-period';
+    periodInfo.className = 'period';
     periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
     card.appendChild(periodInfo);
     const detailsWrapper = document.createElement('div');
