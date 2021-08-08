@@ -1,3 +1,5 @@
+$_primary: #ee6352;
+
 body {
   background: #ddd;
   font-family: basic-sans, sans-serif;
@@ -11,4 +13,21 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+input {
+  border-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    border-color: $_primary;
+  }
+
+  &:focus {
+    outline: none !important;
+    border-color: #719ece;
+    box-shadow: 0 0 10px #719ece;
+  }
 }
