@@ -16,45 +16,6 @@ $_white: white;
   }
 }
 
-h3 {
-  margin-top: 2em;
-}
-
-.form-button-block {
-  display: flex;
-  justify-content: space-around;
-  margin: 1em;
-}
-
-.record-btn {
-  margin: 0 5px;
-  width: 135px;
-
-  &.--add {
-    background: $_submit;
-  }
-}
-
-.record-card {
-  align-items: center;
-  background: white;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-around;
-  margin: 2em 0;
-}
-
-.period {
-  font-weight: bold;
-  margin: 1em;
-}
-
-.card-details {
-  flex: 2;
-  text-align: center;
-  margin: 1em;
-}
-
 .education-subject {
   font-size: larger;
   font-weight: 700;

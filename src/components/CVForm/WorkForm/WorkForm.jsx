@@ -73,7 +73,7 @@ function WorkForm({ setWorkExperience }) {
 
   return (
     <div className='work-experience-block'>
-      <h2>Work Experience</h2>
+      <h1 className='section-header'>Work Experience</h1>
       <button className='open-workForm-btn --add' onClick={displayForm}>
         Add
       </button>
@@ -122,7 +122,7 @@ function WorkForm({ setWorkExperience }) {
           required
           value={toDate}
         />
-        <div className='form-buttons-block'>
+        <div className='button-wrapper'>
           <button className='record-btn --add'>Add Record</button>
           <button onClick={clearFields} className='record-btn --close'>
             Cancel

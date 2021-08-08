@@ -89,8 +89,7 @@ function EducationForm({ setEducation }) {
           value={study}
           required
         />
-        <h3>Date of Study</h3>
-        <label htmlFor='study-start'>From</label>
+        <label htmlFor='study-start'>From:</label>
         <input
           type='text'
           placeholder='YYYY'
@@ -98,7 +97,7 @@ function EducationForm({ setEducation }) {
           value={fromDate}
           required
         />
-        <label htmlFor='study-end'>To</label>
+        <label htmlFor='study-end'>To:</label>
         <input
           type='text'
           placeholder='YYYY or Present'
@@ -106,7 +105,7 @@ function EducationForm({ setEducation }) {
           value={toDate}
           required
         />
-        <div className='form-button-block'>
+        <div className='button-wrapper'>
           <button className='record-btn --add'>Add Record</button>
           <button onClick={clearFields} className='record-btn --close'>
             Cancel
