@@ -5,20 +5,24 @@ function UserCV({ person, education, workExperience }) {
   return (
     <div className='cv-wrapper'>
       <div className='personal-details --wrapper'>
-        <h2 className='personal-details --name'>
+        <h1 className='personal-details --name'>
           {person.name} {person.surname}
-        </h2>
+        </h1>
         <div className='personal-contacts-wrapper'>
           <h4 className='personal-contacts --email'>{person.email}</h4>
           <h4 className='personal-contacts --number'>{person.number}</h4>
         </div>
       </div>
       <div className='personal-education-wrapper'>
+        <h2 className='section-header'>Education</h2>
         {education.map((education) => (
-          <div className='education-period' key={education.study}>
-            {education.fromDate} - {education.toDate}
+          <div className='education-record' key={education.study}>
+            <div className='education-period'>
+              {education.fromDate} - {education.toDate}
+            </div>
             <div className='education-details'>
-              {education.study} {education.school}
+              <div className='education-subject'>{education.study}</div>
+              <div className='education-school'>{education.school}</div>
             </div>
           </div>
         ))}

@@ -1,4 +1,5 @@
-$_black_light: #424242;
+$_black-light: #847d7d;
+$_primary-light: #ad7979;
 
 .cv-wrapper {
   background: white;
@@ -16,11 +17,38 @@ $_black_light: #424242;
 }
 
 .personal-contacts {
-  color: $_black_light;
+  color: $_black-light;
   line-height: 1.5em;
 
   &.--email,
   &.--number {
     margin: 0;
   }
+}
+
+.personal-education-wrapper::before,
+.personal-education-wrapper::after {
+  border-top: dotted;
+  color: $_primary-light;
+  content: '';
+  display: block;
+  width: 100%;
+}
+
+.personal-education-wrapper {
+  margin: 4em 0;
+}
+
+.education-record {
+  border: 1px solid;
+  border-color: $_primary-light;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.education-period {
+  color: $_black-light;
 }

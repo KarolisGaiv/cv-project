@@ -1,6 +1,7 @@
 $_submit: #59a100;
 $_close: #ef974b;
 $_white: white;
+$_black-light: #847d7d;
 
 .education-block {
   margin-top: 2em;
@@ -17,11 +18,12 @@ $_white: white;
 }
 
 .education-subject {
-  font-size: larger;
-  font-weight: 700;
+  font-size: medium;
+  font-weight: 900;
 }
 
 .education-school {
+  color: $_black-light;
   font-weight: 500;
   margin-top: 10px;
 }
