@@ -1,0 +1,26 @@
+$_black_light: #424242;
+
+.cv-wrapper {
+  background: white;
+  border-radius: 5px;
+  margin: 2em;
+  padding: 2em;
+  min-width: 60vh;
+  max-width: 80vh;
+}
+
+.personal-details {
+  &.--wrapper {
+    line-height: 1.5em;
+  }
+}
+
+.personal-contacts {
+  color: $_black_light;
+  line-height: 1.5em;
+
+  &.--email,
+  &.--number {
+    margin: 0;
+  }
+}

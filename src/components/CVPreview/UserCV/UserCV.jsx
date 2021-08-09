@@ -1,15 +1,16 @@
 import React from 'react';
+import './userCV.scss';
 
 function UserCV({ person, education, workExperience }) {
   return (
     <div className='cv-wrapper'>
-      <div className='personal-details-wrapper'>
-        <h2>
+      <div className='personal-details --wrapper'>
+        <h2 className='personal-details --name'>
           {person.name} {person.surname}
         </h2>
         <div className='personal-contacts-wrapper'>
-          <h4>{person.email}</h4>
-          <h4>{person.number}</h4>
+          <h4 className='personal-contacts --email'>{person.email}</h4>
+          <h4 className='personal-contacts --number'>{person.number}</h4>
         </div>
       </div>
       <div className='personal-education-wrapper'>
