@@ -1,5 +1,6 @@
 $_black-light: #847d7d;
 $_primary-light: #ad7979;
+$_height-medium: 1.5e;
 
 .cv-wrapper {
   background: white;
@@ -12,13 +13,13 @@ $_primary-light: #ad7979;
 
 .personal-details {
   &.--wrapper {
-    line-height: 1.5em;
+    line-height: $_height-medium;
   }
 }
 
 .personal-contacts {
   color: $_black-light;
-  line-height: 1.5em;
+  line-height: $_height-medium;
 
   &.--email,
   &.--number {
@@ -35,29 +36,6 @@ $_primary-light: #ad7979;
   width: 100%;
 }
 
-.personal-education-wrapper {
+.education-wrapper {
   margin: 4em 0;
-}
-
-.card {
-  border: 1px solid;
-  border-color: $_primary-light;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  margin: 1em 0;
-  padding: 1em;
-
-  &.--work-record {
-    flex-direction: column;
-  }
-}
-
-.card--top {
-  display: flex;
-  justify-content: space-between;
-}
-
-.education-period {
-  color: $_black-light;
 }

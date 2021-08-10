@@ -1,0 +1,32 @@
+$_primary-light: #ad7979;
+$_black-light: #847d7d;
+
+.card {
+  border: 1px solid;
+  border-color: $_primary-light;
+  border-radius: 5px;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+.card-top {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.title,
+.period {
+  font-weight: bold;
+}
+
+.location {
+  color: $_black-light;
+}
+
+.card-bottom {
+  margin: 1em 0;
+  padding: 0 1em;
+  word-wrap: break-word;
+}
