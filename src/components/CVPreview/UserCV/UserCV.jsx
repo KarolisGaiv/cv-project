@@ -1,5 +1,6 @@
 import React from 'react';
 import './userCV.scss';
+import Card from '../Card/Card';
 
 function UserCV({ person, education, workExperience }) {
   return (
@@ -13,39 +14,27 @@ function UserCV({ person, education, workExperience }) {
           <h4 className='personal-contacts --number'>{person.number}</h4>
         </div>
       </div>
-      <div className='personal-education-wrapper'>
+      <div className='education-wrapper'>
         <h2 className='section-header'>Education</h2>
         {education.map((education) => (
-          <div className='education-record' key={education.study}>
-            <div className='education-period'>
-              {education.fromDate} - {education.toDate}
-            </div>
-            <div className='education-details'>
-              <div className='education-subject'>{education.study}</div>
-              <div className='education-school'>{education.school}</div>
-            </div>
-          </div>
+          <Card
+            fromDate={education.fromDate}
+            toDate={education.toDate}
+            title={education.study}
+            location={education.school}
+          />
         ))}
       </div>
-      <div className='work-experience-wrapper'>
+      <div className='experience-wrapper'>
         <h2 className='section-header'>Experience</h2>
         {workExperience.map((workRecord) => (
-          <div className='work-record'>
-            <div className='card-top'>
-              <div className='work-period' key={workRecord.position}>
-                {workRecord.fromDate} {workRecord.toDate}
-              </div>
-              <div className='work-details'>
-                <div className='work-position'>{workRecord.position}</div>
-                <div className='work-company'>{workRecord.companyName}</div>
-              </div>
-            </div>
-            <div className='card-bottom'>
-              <div className='work-description'>
-                {workRecord.jobDescription}
-              </div>
-            </div>
-          </div>
+          <Card
+            fromDate={workRecord.fromDate}
+            toDate={workRecord.toDate}
+            title={workRecord.position}
+            location={workRecord.companyName}
+            description={workRecord.jobDescription}
+          />
         ))}
       </div>
     </div>

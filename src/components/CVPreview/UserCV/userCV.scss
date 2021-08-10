@@ -26,8 +26,8 @@ $_primary-light: #ad7979;
   }
 }
 
-.personal-education-wrapper::before,
-.work-experience-wrapper::before {
+.education-wrapper::before,
+.experience-wrapper::before {
   border-top: dotted;
   color: $_primary-light;
   content: '';
@@ -39,7 +39,7 @@ $_primary-light: #ad7979;
   margin: 4em 0;
 }
 
-.education-record {
+.card {
   border: 1px solid;
   border-color: $_primary-light;
   border-radius: 5px;
@@ -47,6 +47,15 @@ $_primary-light: #ad7979;
   justify-content: space-between;
   margin: 1em 0;
   padding: 1em;
+
+  &.--work-record {
+    flex-direction: column;
+  }
+}
+
+.card--top {
+  display: flex;
+  justify-content: space-between;
 }
 
 .education-period {
