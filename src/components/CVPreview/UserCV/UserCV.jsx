@@ -28,12 +28,22 @@ function UserCV({ person, education, workExperience }) {
         ))}
       </div>
       <div className='work-experience-wrapper'>
+        <h2 className='section-header'>Experience</h2>
         {workExperience.map((workRecord) => (
-          <div className='work-period' key={workRecord.position}>
-            {workRecord.fromDate} {workRecord.toDate}
-            <div className='work-details'>
-              {workRecord.position} {workRecord.companyName}{' '}
-              {workRecord.jobDescription}
+          <div className='work-record'>
+            <div className='card-top'>
+              <div className='work-period' key={workRecord.position}>
+                {workRecord.fromDate} {workRecord.toDate}
+              </div>
+              <div className='work-details'>
+                <div className='work-position'>{workRecord.position}</div>
+                <div className='work-company'>{workRecord.companyName}</div>
+              </div>
+            </div>
+            <div className='card-bottom'>
+              <div className='work-description'>
+                {workRecord.jobDescription}
+              </div>
             </div>
           </div>
         ))}
