@@ -5,6 +5,8 @@ import WorkForm from './WorkForm/WorkForm';
 
 function ResumeView({
   person,
+  previousEducaction,
+  workHistory,
   setName,
   setSurname,
   setEmail,
@@ -21,8 +23,14 @@ function ResumeView({
         setEmail={setEmail}
         setNumber={setNumber}
       />
-      <EducationForm setEducation={setEducation} />
-      <WorkForm setWorkExperience={setWorkExperience} />
+      <EducationForm
+        previousEducaction={previousEducaction}
+        setEducation={setEducation}
+      />
+      <WorkForm
+        workHistory={workHistory}
+        setWorkExperience={setWorkExperience}
+      />
     </div>
   );
 }

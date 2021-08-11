@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './workForm.scss';
+import Card from '../../CVPreview/Card/Card';
 
-function WorkForm({ setWorkExperience }) {
+function WorkForm({ workHistory, setWorkExperience }) {
   const [companyName, setCompanyName] = useState('');
   const [position, setPosition] = useState('');
   const [jobDescription, setJobDescription] = useState('');
@@ -32,7 +33,6 @@ function WorkForm({ setWorkExperience }) {
   function addRecord(e) {
     e.preventDefault();
     setWorkExperience((prevRecords) => [...prevRecords, newJobRecord]);
-    displayWorkRecord(newJobRecord);
     clearFields();
   }
 
@@ -44,38 +44,38 @@ function WorkForm({ setWorkExperience }) {
     setToDate('');
   }
 
-  function displayWorkRecord(record) {
-    const card = document.createElement('div');
-    card.className = 'card --temporary';
-    const cardTop = document.createElement('div');
-    cardTop.className = 'card-top';
-    card.appendChild(cardTop);
-    const periodInfo = document.createElement('div');
-    periodInfo.className = 'period';
-    periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
-    cardTop.appendChild(periodInfo);
-    const detailsWrapper = document.createElement('div');
-    detailsWrapper.className = 'details';
-    cardTop.appendChild(detailsWrapper);
-    const position = document.createElement('div');
-    position.className = 'title';
-    position.innerHTML = record.position;
-    detailsWrapper.appendChild(position);
-    const company = document.createElement('div');
-    company.className = 'location';
-    company.innerHTML = record.companyName;
-    detailsWrapper.appendChild(company);
-    const cardBottom = document.createElement('div');
-    cardBottom.className = 'card-bottom';
-    card.appendChild(cardBottom);
-    const jobDescription = document.createElement('div');
-    jobDescription.className = 'description';
-    jobDescription.innerHTML = record.jobDescription;
-    cardBottom.appendChild(jobDescription);
+  // function displayWorkRecord(record) {
+  //   const card = document.createElement('div');
+  //   card.className = 'card --temporary';
+  //   const cardTop = document.createElement('div');
+  //   cardTop.className = 'card-top';
+  //   card.appendChild(cardTop);
+  //   const periodInfo = document.createElement('div');
+  //   periodInfo.className = 'period';
+  //   periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
+  //   cardTop.appendChild(periodInfo);
+  //   const detailsWrapper = document.createElement('div');
+  //   detailsWrapper.className = 'details';
+  //   cardTop.appendChild(detailsWrapper);
+  //   const position = document.createElement('div');
+  //   position.className = 'title';
+  //   position.innerHTML = record.position;
+  //   detailsWrapper.appendChild(position);
+  //   const company = document.createElement('div');
+  //   company.className = 'location';
+  //   company.innerHTML = record.companyName;
+  //   detailsWrapper.appendChild(company);
+  //   const cardBottom = document.createElement('div');
+  //   cardBottom.className = 'card-bottom';
+  //   card.appendChild(cardBottom);
+  //   const jobDescription = document.createElement('div');
+  //   jobDescription.className = 'description';
+  //   jobDescription.innerHTML = record.jobDescription;
+  //   cardBottom.appendChild(jobDescription);
 
-    const workBlock = document.querySelector('.work-experience-block');
-    workBlock.appendChild(card);
-  }
+  //   const workBlock = document.querySelector('.work-experience-block');
+  //   workBlock.appendChild(card);
+  // }
 
   return (
     <div className='work-experience-block'>
@@ -135,6 +135,16 @@ function WorkForm({ setWorkExperience }) {
           </button>
         </div>
       </form>
+      {workHistory.map((previousWork, key) => (
+        <Card
+          key={key}
+          fromDate={previousWork.fromDate}
+          toDate={previousWork.toDate}
+          title={previousWork.position}
+          location={previousWork.companyName}
+          description={previousWork.jobDescription}
+        />
+      ))}
     </div>
   );
 }

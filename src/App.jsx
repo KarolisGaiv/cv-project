@@ -33,6 +33,8 @@ function App() {
       {!previewStatus ? (
         <ResumeView
           person={person}
+          previousEducaction={education}
+          workHistory={workExperience}
           setName={setName}
           setSurname={setSurname}
           setEmail={setEmail}

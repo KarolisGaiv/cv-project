@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './educationForm.scss';
+import Card from '../../CVPreview/Card/Card';
 
-function EducationForm({ setEducation }) {
+function EducationForm({ previousEducaction, setEducation }) {
   const [school, setSchool] = useState('');
   const [study, setStudy] = useState('');
   const [fromDate, setFromDate] = useState('');
@@ -30,7 +31,6 @@ function EducationForm({ setEducation }) {
   function handleSubmit(e) {
     e.preventDefault();
     setEducation((prevExp) => [...prevExp, newRecord]);
-    displayEducationRecord(newRecord);
     clearFields();
   }
 
@@ -39,32 +39,6 @@ function EducationForm({ setEducation }) {
     setStudy('');
     setFromDate('');
     setToDate('');
-  }
-
-  function displayEducationRecord(record) {
-    const card = document.createElement('div');
-    card.className = 'card --temporary';
-    const cardTop = document.createElement('div');
-    cardTop.className = 'card-top';
-    card.appendChild(cardTop);
-    const periodInfo = document.createElement('div');
-    periodInfo.className = 'period';
-    periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
-    cardTop.appendChild(periodInfo);
-    const detailsWrapper = document.createElement('div');
-    detailsWrapper.className = 'details';
-    cardTop.appendChild(detailsWrapper);
-    const studySubject = document.createElement('div');
-    studySubject.className = 'title';
-    studySubject.innerHTML = record.study;
-    detailsWrapper.appendChild(studySubject);
-    const school = document.createElement('div');
-    school.className = 'location';
-    school.innerHTML = record.school;
-    detailsWrapper.appendChild(school);
-
-    const educationBlock = document.querySelector('.education-block');
-    educationBlock.appendChild(card);
   }
 
   return (
@@ -115,6 +89,15 @@ function EducationForm({ setEducation }) {
           </button>
         </div>
       </form>
+      {previousEducaction.map((educationRecord, key) => (
+        <Card
+          key={key}
+          fromDate={educationRecord.fromDate}
+          toDate={educationRecord.toDate}
+          title={educationRecord.study}
+          location={educationRecord.school}
+        />
+      ))}
     </div>
   );
 }
