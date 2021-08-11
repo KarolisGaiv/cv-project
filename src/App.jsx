@@ -23,7 +23,7 @@ function App() {
     setPerson(currentUser);
   }
 
-  function showPreviewForm() {
+  function showPreviewForm(e) {
     handleSubmit();
     setPreviewStatus(!previewStatus);
   }
@@ -47,8 +47,8 @@ function App() {
         />
       )}
       <div className='bottom'>
-        <button onClick={showPreviewForm} className='view-resume-btn --add'>
-          Save & View
+        <button onClick={showPreviewForm} className='change-view-btn --add'>
+          {previewStatus ? 'Go Back' : 'Save & View'}
         </button>
       </div>
     </div>
