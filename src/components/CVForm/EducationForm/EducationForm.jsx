@@ -43,20 +43,23 @@ function EducationForm({ setEducation }) {
 
   function displayEducationRecord(record) {
     const card = document.createElement('div');
-    card.className = 'record-card';
+    card.className = 'card --temporary';
+    const cardTop = document.createElement('div');
+    cardTop.className = 'card-top';
+    card.appendChild(cardTop);
     const periodInfo = document.createElement('div');
     periodInfo.className = 'period';
     periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
-    card.appendChild(periodInfo);
+    cardTop.appendChild(periodInfo);
     const detailsWrapper = document.createElement('div');
-    detailsWrapper.className = 'card-details';
-    card.appendChild(detailsWrapper);
+    detailsWrapper.className = 'details';
+    cardTop.appendChild(detailsWrapper);
     const studySubject = document.createElement('div');
-    studySubject.className = 'education-subject';
+    studySubject.className = 'title';
     studySubject.innerHTML = record.study;
     detailsWrapper.appendChild(studySubject);
     const school = document.createElement('div');
-    school.className = 'education-school';
+    school.className = 'location';
     school.innerHTML = record.school;
     detailsWrapper.appendChild(school);
 

@@ -1,5 +1,6 @@
 $_primary-light: #ad7979;
 $_black-light: #847d7d;
+$_white-shade: #efe9e9;
 
 .card {
   border: 1px solid;
@@ -7,6 +8,10 @@ $_black-light: #847d7d;
   border-radius: 5px;
   margin: 1em 0;
   padding: 0.5em;
+
+  &.--temporary {
+    background: $_white-shade;
+  }
 }
 
 .card-top {

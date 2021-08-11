@@ -24,13 +24,6 @@ function App() {
     setPerson(currentUser);
   }
 
-  // function test() {
-  //   console.log(name);
-  //   console.log(surname);
-  //   console.log(education);
-  //   console.log(workExperience);
-  // }
-
   function showPreviewForm() {
     handleSubmit();
     setPreviewStatus(true);
