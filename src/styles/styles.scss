@@ -21,7 +21,7 @@ body {
 
 .resume-form-block {
   max-width: 80vh;
-  min-width: 60vh;
+  min-width: 55vh;
 }
 
 input,
@@ -99,4 +99,8 @@ button {
   display: flex;
   justify-content: space-around;
   margin: 1em;
+}
+
+.bottom {
+  margin: 5em 0;
 }

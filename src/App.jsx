@@ -14,7 +14,6 @@ function App() {
   const [person, setPerson] = useState({});
 
   function handleSubmit() {
-    // e.preventDefault();
     const currentUser = {
       name,
       surname,
@@ -26,7 +25,7 @@ function App() {
 
   function showPreviewForm() {
     handleSubmit();
-    setPreviewStatus(true);
+    setPreviewStatus(!previewStatus);
   }
 
   return (
@@ -47,8 +46,11 @@ function App() {
           workExperience={workExperience}
         />
       )}
-
-      <button onClick={showPreviewForm}>Test</button>
+      <div className='bottom'>
+        <button onClick={showPreviewForm} className='view-resume-btn --add'>
+          Save & View
+        </button>
+      </div>
     </div>
   );
 }
