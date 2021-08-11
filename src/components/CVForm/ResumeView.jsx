@@ -4,6 +4,7 @@ import EducationForm from './EducationForm/EducationForm';
 import WorkForm from './WorkForm/WorkForm';
 
 function ResumeView({
+  person,
   setName,
   setSurname,
   setEmail,
@@ -14,6 +15,7 @@ function ResumeView({
   return (
     <div className='resume-form-block'>
       <PersonalDetailsForm
+        person={person}
         setName={setName}
         setSurname={setSurname}
         setEmail={setEmail}

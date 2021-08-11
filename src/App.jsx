@@ -32,6 +32,7 @@ function App() {
     <div className='content'>
       {!previewStatus ? (
         <ResumeView
+          person={person}
           setName={setName}
           setSurname={setSurname}
           setEmail={setEmail}

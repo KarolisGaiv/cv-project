@@ -1,7 +1,13 @@
 import React from 'react';
 import './personalDetails.scss';
 
-function PersonalDetailsForm({ setName, setSurname, setEmail, setNumber }) {
+function PersonalDetailsForm({
+  person,
+  setName,
+  setSurname,
+  setEmail,
+  setNumber,
+}) {
   function handleName(e) {
     const name = e.target.value;
     setName(name);
@@ -33,6 +39,7 @@ function PersonalDetailsForm({ setName, setSurname, setEmail, setNumber }) {
           placeholder='John'
           onChange={handleName}
           required
+          value={person.name}
         />
         <label htmlFor='surname-field'>Last Name</label>
         <input
@@ -41,6 +48,7 @@ function PersonalDetailsForm({ setName, setSurname, setEmail, setNumber }) {
           placeholder='Doe'
           onChange={handleSurname}
           required
+          value={person.surname}
         />
         <label htmlFor='email-field'>Email</label>
         <input
@@ -49,9 +57,15 @@ function PersonalDetailsForm({ setName, setSurname, setEmail, setNumber }) {
           placeholder='example@gmail.com'
           onChange={handleEmail}
           required
+          value={person.email}
         />
         <label htmlFor='phone-field'>Phone Number</label>
-        <input type='number' id='phone-field' onChange={handleNumber} />
+        <input
+          type='number'
+          id='phone-field'
+          onChange={handleNumber}
+          value={person.number}
+        />
       </form>
     </div>
   );
