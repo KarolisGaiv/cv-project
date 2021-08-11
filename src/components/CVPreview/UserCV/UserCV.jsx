@@ -16,8 +16,9 @@ function UserCV({ person, education, workExperience }) {
       </div>
       <div className='education-wrapper'>
         <h2 className='section-header'>Education</h2>
-        {education.map((education) => (
+        {education.map((education, key) => (
           <Card
+            key={key}
             fromDate={education.fromDate}
             toDate={education.toDate}
             title={education.study}
@@ -27,8 +28,9 @@ function UserCV({ person, education, workExperience }) {
       </div>
       <div className='experience-wrapper'>
         <h2 className='section-header'>Experience</h2>
-        {workExperience.map((workRecord) => (
+        {workExperience.map((workRecord, key) => (
           <Card
+            key={key}
             fromDate={workRecord.fromDate}
             toDate={workRecord.toDate}
             title={workRecord.position}

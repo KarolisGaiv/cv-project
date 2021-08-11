@@ -46,29 +46,32 @@ function WorkForm({ setWorkExperience }) {
 
   function displayWorkRecord(record) {
     const card = document.createElement('div');
-    card.className = 'record-card --block';
-    const topBlock = document.createElement('div');
-    topBlock.className = 'top-block';
-    card.appendChild(topBlock);
+    card.className = 'card --temporary';
+    const cardTop = document.createElement('div');
+    cardTop.className = 'card-top';
+    card.appendChild(cardTop);
     const periodInfo = document.createElement('div');
     periodInfo.className = 'period';
     periodInfo.innerHTML = record.fromDate + ' - ' + record.toDate;
-    topBlock.appendChild(periodInfo);
+    cardTop.appendChild(periodInfo);
     const detailsWrapper = document.createElement('div');
-    detailsWrapper.className = 'card-details';
-    topBlock.appendChild(detailsWrapper);
+    detailsWrapper.className = 'details';
+    cardTop.appendChild(detailsWrapper);
     const position = document.createElement('div');
-    position.className = 'work-position';
+    position.className = 'title';
     position.innerHTML = record.position;
     detailsWrapper.appendChild(position);
     const company = document.createElement('div');
-    company.className = 'work-comapny';
+    company.className = 'location';
     company.innerHTML = record.companyName;
     detailsWrapper.appendChild(company);
+    const cardBottom = document.createElement('div');
+    cardBottom.className = 'card-bottom';
+    card.appendChild(cardBottom);
     const jobDescription = document.createElement('div');
-    jobDescription.className = 'work-description';
+    jobDescription.className = 'description';
     jobDescription.innerHTML = record.jobDescription;
-    card.appendChild(jobDescription);
+    cardBottom.appendChild(jobDescription);
 
     const workBlock = document.querySelector('.work-experience-block');
     workBlock.appendChild(card);
