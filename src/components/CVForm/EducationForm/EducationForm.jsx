@@ -26,6 +26,7 @@ function EducationForm({ previousEducaction, setEducation }) {
     study,
     fromDate,
     toDate,
+    key: study,
   };
 
   function handleSubmit(e) {
@@ -42,7 +43,7 @@ function EducationForm({ previousEducaction, setEducation }) {
   }
 
   function deleteRecord(e) {
-    console.log(e.target);
+    console.log(e.target.id);
   }
 
   return (
@@ -93,17 +94,20 @@ function EducationForm({ previousEducaction, setEducation }) {
           </button>
         </div>
       </form>
-      {previousEducaction.map((educationRecord, key) => (
-        <div className='record-wrapper'>
+      {previousEducaction.map((educationRecord) => (
+        <div className='record-wrapper' key={educationRecord.key}>
           <Card
-            key={key}
             fromDate={educationRecord.fromDate}
             toDate={educationRecord.toDate}
             title={educationRecord.study}
             location={educationRecord.school}
           />
           {previousEducaction.length > 0 ? (
-            <button className='delete-btn --close' onClick={deleteRecord}>
+            <button
+              className='delete-btn --close'
+              onClick={deleteRecord}
+              id={educationRecord.key}
+            >
               Delete
             </button>
           ) : null}

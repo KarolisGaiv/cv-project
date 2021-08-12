@@ -28,6 +28,7 @@ function WorkForm({ workHistory, setWorkExperience }) {
     jobDescription,
     fromDate,
     toDate,
+    key: position,
   };
 
   function addRecord(e) {
@@ -102,10 +103,9 @@ function WorkForm({ workHistory, setWorkExperience }) {
           </button>
         </div>
       </form>
-      {workHistory.map((previousWork, key) => (
-        <div className='record-wrapper'>
+      {workHistory.map((previousWork) => (
+        <div className='record-wrapper' key={previousWork.key}>
           <Card
-            key={key}
             fromDate={previousWork.fromDate}
             toDate={previousWork.toDate}
             title={previousWork.position}
