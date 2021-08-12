@@ -43,7 +43,13 @@ function EducationForm({ previousEducaction, setEducation }) {
   }
 
   function deleteRecord(e) {
-    console.log(e.target.id);
+    // get card title to determine which card should be deleted
+    const recordTitle = e.target.id;
+    // update previous education records array = delete unwanted record
+    const updatedArray = previousEducaction.filter(
+      (record) => record.study !== recordTitle
+    );
+    setEducation(updatedArray);
   }
 
   return (
