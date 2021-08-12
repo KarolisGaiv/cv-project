@@ -49,11 +49,11 @@ function App() {
           workExperience={workExperience}
         />
       )}
-      <div className='bottom'>
+      <footer className='bottom'>
         <button onClick={showPreviewForm} className='change-view-btn --add'>
           {previewStatus ? 'Go Back' : 'Save & View'}
         </button>
-      </div>
+      </footer>
     </div>
   );
 }
