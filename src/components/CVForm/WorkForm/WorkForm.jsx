@@ -45,6 +45,16 @@ function WorkForm({ workHistory, setWorkExperience }) {
     setToDate('');
   }
 
+  function deleteRecord(e) {
+    // get card title to determine which work record should be deleted
+    const recordTitle = e.target.id;
+    // update previous work records array - delete unwanted work record
+    const updatedArray = workHistory.filter(
+      (workRecord) => workRecord.position !== recordTitle
+    );
+    setWorkExperience(updatedArray);
+  }
+
   return (
     <div className='work-experience-block'>
       <h1 className='section-header'>Work Experience</h1>
@@ -113,7 +123,13 @@ function WorkForm({ workHistory, setWorkExperience }) {
             description={previousWork.jobDescription}
           />
           {workHistory.length > 0 ? (
-            <button className='delete-btn --close'>Delete</button>
+            <button
+              className='delete-btn --close'
+              onClick={deleteRecord}
+              id={previousWork.key}
+            >
+              Delete
+            </button>
           ) : null}
         </div>
       ))}
