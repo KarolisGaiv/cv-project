@@ -103,14 +103,19 @@ function WorkForm({ workHistory, setWorkExperience }) {
         </div>
       </form>
       {workHistory.map((previousWork, key) => (
-        <Card
-          key={key}
-          fromDate={previousWork.fromDate}
-          toDate={previousWork.toDate}
-          title={previousWork.position}
-          location={previousWork.companyName}
-          description={previousWork.jobDescription}
-        />
+        <div className='record-wrapper'>
+          <Card
+            key={key}
+            fromDate={previousWork.fromDate}
+            toDate={previousWork.toDate}
+            title={previousWork.position}
+            location={previousWork.companyName}
+            description={previousWork.jobDescription}
+          />
+          {workHistory.length > 0 ? (
+            <button className='delete-btn --close'>Delete</button>
+          ) : null}
+        </div>
       ))}
     </div>
   );

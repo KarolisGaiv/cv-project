@@ -41,6 +41,10 @@ function EducationForm({ previousEducaction, setEducation }) {
     setToDate('');
   }
 
+  function deleteRecord(e) {
+    console.log(e.target);
+  }
+
   return (
     <div className='education-block'>
       <h1 className='section-header'>Education Details</h1>
@@ -90,13 +94,20 @@ function EducationForm({ previousEducaction, setEducation }) {
         </div>
       </form>
       {previousEducaction.map((educationRecord, key) => (
-        <Card
-          key={key}
-          fromDate={educationRecord.fromDate}
-          toDate={educationRecord.toDate}
-          title={educationRecord.study}
-          location={educationRecord.school}
-        />
+        <div className='record-wrapper'>
+          <Card
+            key={key}
+            fromDate={educationRecord.fromDate}
+            toDate={educationRecord.toDate}
+            title={educationRecord.study}
+            location={educationRecord.school}
+          />
+          {previousEducaction.length > 0 ? (
+            <button className='delete-btn --close' onClick={deleteRecord}>
+              Delete
+            </button>
+          ) : null}
+        </div>
       ))}
     </div>
   );
